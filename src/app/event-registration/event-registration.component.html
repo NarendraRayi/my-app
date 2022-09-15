@@ -1,0 +1,13 @@
+<h3>Registration</h3><br>
+<label>Name</label>
+<input type="text" [(ngModel)]='name'>
+<button (click)="register()">Register</button>
+<ol>
+    <li *ngFor="let name of names;let i=index">
+        {{name}}
+        <button (click)="deleteEach(i)">delete</button>
+    </li>
+</ol>
+<button class="btn btn-danger" (click)="delete()">Delete</button><br>
+<button class="btn btn-danger" (click)="deleteAll()">DeleteAll</button><br>
+<button class="btn btn-success" (click)="reverse()">Reverse</button>

@@ -1,0 +1,11 @@
+<div class="student">
+<h3>Student registration</h3>
+
+    <input type="text" [(ngModel)]="sname"><br>
+    <button class="bone" (click)="register()">Register</button><br>
+    <ol>
+        <li *ngFor=" let sname of snames">{{sname}}</li>
+    </ol><br>
+    <button class="btn btn-danger" (click)="delete()">Delete</button><br>
+    <button class="btn btn-primary" (click)="reverse()">Reverse</button>
+</div>

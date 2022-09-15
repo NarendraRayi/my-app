@@ -1,0 +1,60 @@
+<input type="text" [(ngModel)]="filterTerm" />
+<button (click)="filter()">Filter</button>
+
+<select [(ngModel)]="column">
+  <option>Vehicle</option>
+  <option>Manufacturer</option>
+  <option>model</option>
+  <option>type</option>
+  <option>fuel</option>
+  <option>color</option>
+</select>
+
+<select [(ngModel)]="order">
+  <option>asc</option>
+  <option>desc</option>
+</select>
+<button (click)="sort()">Sort</button>
+
+
+<table class="table">
+  <thead>
+    <th>Id</th>
+    <th>Vehicle</th>
+    <th>Manufacturer</th>
+    <th>Model</th>
+    <th>Type</th>
+    <th>Fuel</th>
+    <th>Color</th>
+    <th>Actions</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let vehicle of vehicles">
+      <td style="color: black">{{ vehicle.id }}</td>
+      <td style="color: black">{{ vehicle.Vehicle }}</td>
+      <td style="color: black">{{ vehicle.manufacturer }}</td>
+      <td style="color: black">{{ vehicle.model }}</td>
+      <td style="color: black">{{ vehicle.type }}</td>
+      <td style="color: black">{{ vehicle.fuel }}</td>
+      <td style="color: black">{{ vehicle.color }}</td>
+      <td>
+        <button class="btn btn danger" (click)="delete(vehicle.id)">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<ol class="pagination">
+  <li class="page-item" (click)="page(1)"><a class="page-link">1</a></li>
+  <li class="page-item" (click)="page(2)"><a class="page-link">2</a></li>
+  <li class="page-item" (click)="page(3)"><a class="page-link">3</a></li>
+  <li class="page-item" (click)="page(4)"><a class="page-link">4</a></li>
+  <li class="page-item" (click)="page(5)"><a class="page-link">5</a></li>
+  <li class="page-item" (click)="page(6)"><a class="page-link">6</a></li>
+  <li class="page-item" (click)="page(7)"><a class="page-link">7</a></li>
+  <li class="page-item" (click)="page(8)"><a class="page-link">8</a></li>
+  <li class="page-item" (click)="page(9)"><a class="page-link">9</a></li>
+  <li class="page-item" (click)="page(10)"><a class="page-link">10</a></li>
+</ol>

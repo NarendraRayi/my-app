@@ -1,0 +1,22 @@
+div{
+    height: 40px;
+    width: 600px;
+    margin:40px;
+    box-shadow:20px ;
+     background-color: white;
+}
+.visited{
+    border: 1px solid grey;
+    font-weight: 700; 
+
+}
+.unvisited{
+    border: 1px solid grey;
+}
+div:hover{
+     border: 2px solid grey;
+}
+label{
+    margin-left: 10px;
+    margin-right: 5px;
+}

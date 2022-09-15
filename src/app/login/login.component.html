@@ -1,0 +1,17 @@
+<div class="parent">
+    <h2>Login</h2>
+        <form [formGroup]="loginForm">
+        <label>Email</label>
+        <input type="text" placeholder="Email" formControlName="email" ><br>
+        <label>Password</label>
+        <input type="password" placeholder=" Enter Password" formControlName="password">
+        <div class="error" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+            <p *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</p>
+            <p *ngIf="loginForm.get('password')?.errors?.['pattern']">Password contains Min 8 numbers</p>
+        </div>
+        <br>
+        <button (click)="submit()">Login</button>
+        </form>
+</div>
+
+

@@ -1,0 +1,14 @@
+<label>Select car:</label>
+<label>Honda</label>
+<input type="radio" name="car" value="honda" [(ngModel)]="car">
+<label>BMW</label>
+<input type="radio" name="car" value="bmw" [(ngModel)]="car">
+<label>Audi</label>
+<input type="radio" name="car" value="audi" [(ngModel)]="car">
+<br>
+
+<img *ngIf="car=='honda'" src="/assets/honda.jpg" alt="">
+<img *ngIf="car=='bmw'" src="/assets/bmw.jpg" alt="">
+<img *ngIf="car=='audi'" src="/assets/audi.jpg" alt="">
+
+<marquee><h2>{{message}}</h2></marquee>

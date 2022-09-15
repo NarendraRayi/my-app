@@ -1,0 +1,22 @@
+.child{
+    background-color: black;
+    width: 25vw;
+    height: 100vh;
+}
+h3{
+    color: white;
+}
+
+h4{
+    color: Yellow;
+}
+.parent{
+    background-color: whitesmoke;
+    display: flex;
+}
+form{
+    background-color: white;
+}
+.child2{ 
+    background-color: whitesmoke;
+}

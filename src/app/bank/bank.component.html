@@ -1,0 +1,36 @@
+<select>
+     <option></option>
+     <option></option>
+     <option></option>
+     <option></option>
+
+
+
+</select>
+
+
+
+<table class="table">
+   <thead>
+    <th>Id</th>
+      <th>Credit</th>
+      <th>Account Name</th>
+      <th>Available Balance</th>
+      <th>Currency</th>
+      <th>Account Number</th>
+      <th>Image</th>
+   </thead>
+   <tbody>
+       <tr *ngFor=" let account of accounts">
+        <td>{{account.id}}</td>
+          <td>{{account.createdAt}}</td>
+          <td>{{account.account_name}}</td>
+          <td>{{account.available_balance}}</td>
+          <td>{{account.currency}}</td>
+          <td>{{account.account_number}}</td>
+          <td> <img src="{{account.user_image}}"></td>
+       </tr>
+
+   </tbody>
+
+</table>

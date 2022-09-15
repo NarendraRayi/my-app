@@ -1,0 +1,80 @@
+<form [formGroup]="userForm">
+     <label>Name</label>
+     <input type="text" formControlName="name">
+     <div class="error" *ngIf="userForm.get('name')?.touched&& userForm.get('name')?.invalid">
+        <p *ngIf="userForm.get('name')?.errors?.['required']" >Name is required</p>
+        <p *ngIf="userForm.get('name')?.errors?.['minlength']" >Min 3 chars required</p>
+        <p *ngIf="userForm.get('name')?.errors?.['maxlength']"  >Max 10 chars required</p>
+     </div><br>
+     <label>Age</label>
+     <input type="number" formControlName="age">
+     <div class="error" *ngIf="userForm.get('age')?.touched&& userForm.get('age')?.invalid">
+        <p *ngIf="userForm.get('age')?.errors?.['required']">Age is required</p>
+        <p *ngIf="userForm.get('age')?.errors?.['min']">min 0 is required</p>
+        <p *ngIf="userForm.get('age')?.errors?.['max']">less than 120 </p>
+     </div>
+     <br>
+     <label>Phone</label>
+     <input type="number" formControlName="phone">
+     <div class="error" *ngIf="userForm.get('phone')?.touched&& userForm.get('phone')?.invalid">
+        <p *ngIf="userForm.get('phone')?.errors?.['required']">Number is required</p>
+        <p *ngIf="userForm.get('phone')?.errors?.['min']">Should contain Min 10 numbers</p>
+        <p *ngIf="userForm.get('phone')?.errors?.['max']"> Should contain Max 10 numbers</p>
+     </div>
+     <br>
+
+     <div formGroupName="address">
+        <label>State</label>
+        <input type="text" formControlName="state"><br>
+        <label>Pin</label>
+        <input type="number" formControlName="pin">
+        <div class="error" *ngIf="userForm.get('address')?.get('pin')?.touched&& userForm.get('phone')?.invalid">
+            <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['required']">Pin is required</p>
+            <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['min']">pin contains Min 6 numbers</p>
+            <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['max']"> pin contains Max 6 numbers</p>
+         </div>
+     </div>
+     <button (click)="add()">Add card</button><br>
+     <div formArrayName="cards">
+        <div *ngFor="let card of cardsFormArray.controls; let i=index">
+            <div formGroupName="{{i}}">
+                <label>number</label>
+               <input type="number" formControlName="number"><br>
+               <label>expiry</label>
+               <input type="month" formControlName="expiry"><br>
+              <label>Cvv</label>
+              <input type="number" formControlName="cvv">
+              aaa
+              <div class="error" *ngIf="cardsFormArray.controls[i].get('cvv')?.touched && cardsFormArray.controls[i].get('cvv')?.invalid">
+                <p *ngIf="cardsFormArray.controls[i].get('cvv')?.errors?.['required']">Cvv is required</p>
+                <p *ngIf="cardsFormArray.controls[i].get('cvv')?.errors?.['min']">Cvv contains Min 3 numbers</p>
+                <p *ngIf="cardsFormArray.controls[i].get('cvv')?.errors?.['max']">Cvv contains Max 3 numbers</p>
+             </div>
+              <br>
+              <button (click)="remove(i)">Remove</button>
+            </div>
+
+        </div>
+
+
+
+     </div>
+     <label>Payment type :</label>
+     <label>UPI Payment</label>
+     <input type="radio" name="payment" value="upi" formControlName="paymentType">
+     <label>Card</label>
+     <input type="radio" name="payment" value="card" formControlName="paymentType"><br>
+
+     <div *ngIf="userForm.get('paymentType')?.value=='upi'">
+        <label>UPI id</label>
+        <input type=text formControlName="upiId"><br>
+     </div>
+     <div *ngIf="userForm.get('paymentType')?.value=='card'">
+        <label>Card No</label>
+        <input type="text" formControlName="cardNo">
+     </div>
+     <button (click)="submit()">Submit</button>
+
+
+
+</form>

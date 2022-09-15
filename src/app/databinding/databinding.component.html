@@ -1,0 +1,49 @@
+<p>databinding works!</p>
+
+<h3>My age is {{ age }}</h3>
+<h2>My name is {{ name }}</h2>
+<h5>From India:{{ isIndian }}</h5>
+<h3 *ngFor="let phone of phones">{{ phone }}</h3>
+<ol>
+  <li *ngFor="let course of courses">{{ course }}</li>
+</ol>
+<ul>
+  <li *ngFor="let course of courses">{{ course }}</li>
+</ul>
+<h3>My Name is {{user.name}}.I am from {{ user.city }}</h3>
+<h3>My Name is {{student.name}}</h3>
+<h3>Id is {{student.id}}</h3>
+<h3>marks {{student.marks}}</h3>
+<h3>Employee name is {{employee.name}}</h3>
+<h3>Company {{employee.company}}</h3>
+<h3>Salary {{employee.salary}}</h3>
+<h4 *ngFor="let user of users">
+        Name:{{user.name}} and
+        City:{{user.city}}
+</h4>
+<table border="1">
+    <thead>
+        <th>Name</th>
+        <th>City</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.name}}</td>
+            <td>{{user.city}}</td>
+        </tr>
+    </tbody>
+</table>
+<table border="1">
+    <thead>
+        <th>Name</th>
+        <th>Id</th>
+        <th>Marks</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students">
+            <td>{{student.name}}</td>
+            <td>{{student.id}}</td>
+            <td>{{student.marks}}</td>
+        </tr>
+    </tbody>
+</table>

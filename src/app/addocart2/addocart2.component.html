@@ -1,0 +1,30 @@
+<h2>Add to cart2</h2><br>
+<label>Name</label>
+<input type="text" [(ngModel)]="name"><br>
+<label>Price</label>
+<input type="number" [(ngModel)]="price"><br>
+<label>Quantity</label>
+<input type="number" [(ngModel)]="quantity"><br>
+<button class="btn btn-primary" (click)="cart2()">Add to cart</button><br>
+<button (click)="sortLowToHigh()">Low to high</button>
+<button (click)="sortHighToLow()">High to Low</button>
+
+<table>
+     <thead>
+        <tr class="table hover">
+            <th>Name</th>
+            <th>Price{{totalCost}}</th>
+            <th>Quantity</th>
+            <th (click)="clear()">Clear</th>
+        </tr>
+     </thead>
+     <tbody>
+        <tr *ngFor="let product of products;let i= index">
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.quantity}}</td>
+            <td (click)="delete(i)">Delete</td>
+        </tr>
+     </tbody>
+
+</table>

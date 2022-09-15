@@ -1,0 +1,23 @@
+div{
+    background-color: white;
+    margin: auto;
+}
+.row{
+    border: 20px;
+    margin: 20px;
+}
+.parent{
+    margin: 20px;
+}
+.child{
+    padding: 30px;
+
+}
+.container1{
+    background-color: blanchedalmond;
+    border-radius: 20px;
+    text-align: center;
+}
+label{
+    height: 40px;
+}

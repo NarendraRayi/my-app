@@ -1,0 +1,32 @@
+<h3>Employee Info</h3>
+<label>Name</label>
+<input type="text" [(ngModel)]="name"><br>
+<label>Age</label>
+<input type="number" [(ngModel)]="age"><br>
+<label>Company</label>
+<input type="text" [(ngModel)]="company"><br>
+<label>Package</label>
+<input type="number" [(ngModel)]="package"><br>
+<button (click)="register()">Register</button><br>
+<button (click)="sortLowToHigh()">Low to High</button>
+<button (click)="sortHighToLow()">High to Low</button>
+<table class="table hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Company</th>
+            <th>Package{{totalPackage}}</th>
+            <th (click)="clear()">Clear</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees;let i=index">
+            <td>{{employee.name}}</td>
+            <td>{{employee.age| age}}</td>
+            <td>{{employee.company}}</td>
+            <td>{{employee.package| package}}</td>
+            <td (click)="delete(i)" class="btn btn-danger">Delete</td>
+        </tr>
+    </tbody>
+</table>

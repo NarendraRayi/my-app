@@ -12,6 +12,11 @@ export class VehicleService {
   getVehicles():Observable<Api[]> {
     return this._httpClient.get<Api[]>('https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction?limit=10&page=1');
   }
+  getVehicle(id:string):Observable<Api> {
+    return this._httpClient.get<Api>('https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction'+'/'+id);
+  }
+
+
   getFilterVehicle(filterTerm: string): Observable<Api[]>{
     return this._httpClient.get<Api[]>('https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction' + '?filter=' + filterTerm);
   }

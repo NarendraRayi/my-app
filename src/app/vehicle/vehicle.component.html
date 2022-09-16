@@ -38,9 +38,8 @@
       <td style="color: black">{{ vehicle.fuel }}</td>
       <td style="color: black">{{ vehicle.color }}</td>
       <td>
-        <button class="btn btn danger" (click)="delete(vehicle.id)">
-          Delete
-        </button>
+        <button class="btn btn danger" (click)="delete(vehicle.id)"> Delete </button>
+        <button class="btn btn success" (click)="view(vehicle.id)">View</button>
       </td>
     </tr>
   </tbody>
